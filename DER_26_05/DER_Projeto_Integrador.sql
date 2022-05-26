@@ -21,11 +21,11 @@ USE `db_comnectar` ;
 -- Table `db_comnectar`.`tb_usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_comnectar`.`tb_usuario` (
-  `id_usuario` BIGINT NULL AUTO_INCREMENT,
+  `id_usuario` BIGINT NOT NULL AUTO_INCREMENT,
   `nome_usuario` VARCHAR(255) NOT NULL,
   `login_usuario` VARCHAR(255) NOT NULL,
   `senha_usuario` VARCHAR(255) NOT NULL,
-  `foto_usuario` VARCHAR(255) NULL,
+  `foto_usuario` VARCHAR(255),
   PRIMARY KEY (`id_usuario`),
   UNIQUE INDEX `login_usuario_UNIQUE` (`login_usuario` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 -- Table `db_comnectar`.`tb_categoria`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_comnectar`.`tb_categoria` (
-  `id_categoria` BIGINT NULL AUTO_INCREMENT,
+  `id_categoria` BIGINT NOT NULL AUTO_INCREMENT,
   `classe_categoria` ENUM("Frutas", "Verduras", "Legumes") NOT NULL,
   `modprod_categoria` ENUM("Agricultura Familiar", "Agroecológico", "Orgânico", "Sintrópico") NOT NULL,
   PRIMARY KEY (`id_categoria`))
@@ -46,7 +46,7 @@ ENGINE = InnoDB;
 -- Table `db_comnectar`.`tb_produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_comnectar`.`tb_produto` (
-  `id_produto` BIGINT NULL AUTO_INCREMENT,
+  `id_produto` BIGINT NOT NULL AUTO_INCREMENT,
   `preco_produto` DECIMAL(8,2) NOT NULL,
   `unidade_produto` ENUM("Kg", "g", "Bandeja", "Unidade", "Dúzia") NOT NULL,
   `estoque_produto` DECIMAL(10,2) NULL,
