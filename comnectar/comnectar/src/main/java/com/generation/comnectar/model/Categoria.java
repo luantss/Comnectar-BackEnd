@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="tb_categoria")
@@ -17,11 +16,11 @@ public class Categoria {
 	private Long id;
 
 	//Opções: Frutas,Verduras,Legumes;
-	@Size(min = 5, max = 500)
+	@NotNull
 	private String classe_categoria;
 	
 	//Opções: Familiar,Agroecológica,Orgânica,Sintrópica;
-	@Size(min = 5, max = 500)
+	@NotNull
 	private String modprod_categoria;
 	
 	@NotNull
