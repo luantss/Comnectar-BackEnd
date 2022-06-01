@@ -1,13 +1,12 @@
 package com.generation.comnectar.model;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="tb_categoria")
@@ -16,25 +15,17 @@ public class Categoria {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+
+	//Opções: Frutas,Verduras,Legumes;
+	@Size(min = 5, max = 500)
+	private String classe_categoria;
 	
-	private enum Classe_categoria{
-		Frutas,Verduras,Legumes;
-	}
-	
-	@NotNull
-    @Enumerated(EnumType.STRING)
-    private Classe_categoria classe_categoria;
-	
-	private enum Modprod_categoria{
-		Familiar,Agroecológica,Orgânica,Sintrópica;
-	}
+	//Opções: Familiar,Agroecológica,Orgânica,Sintrópica;
+	@Size(min = 5, max = 500)
+	private String modprod_categoria;
 	
 	@NotNull
-    @Enumerated(EnumType.STRING)
-    private Modprod_categoria modprod_categoria;
-	
-	@NotNull
-	private boolean frescor_produto;
+	private boolean frescor_categoria;
 
 	public Long getId() {
 		return id;
@@ -44,28 +35,27 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public boolean isFrescor_produto() {
-		return frescor_produto;
+	public boolean isFrescor_categoria() {
+		return frescor_categoria;
 	}
 
-	public void setFrescor_produto(boolean frescor_produto) {
-		this.frescor_produto = frescor_produto;
+	public void setFrescor_categoria(boolean frescor_categoria) {
+		this.frescor_categoria = frescor_categoria;
 	}
 
-	public Classe_categoria getClasse_categoria() {
+	public String getClasse_categoria() {
 		return classe_categoria;
 	}
 
-	public void setClasse_categoria(Classe_categoria classe_categoria) {
+	public void setClasse_categoria(String classe_categoria) {
 		this.classe_categoria = classe_categoria;
 	}
 
-	public Modprod_categoria getModprod_categoria() {
+	public String getModprod_categoria() {
 		return modprod_categoria;
 	}
 
-	public void setModprod_categoria(Modprod_categoria modprod_categoria) {
+	public void setModprod_categoria(String modprod_categoria) {
 		this.modprod_categoria = modprod_categoria;
 	}
-	
 }
