@@ -51,7 +51,7 @@ public class CategoriaController {
 
 	@GetMapping("/frescor/{frescorCategoria}")
 	public ResponseEntity<List<Categoria>> buscaCategoriaFrescor(@PathVariable boolean frescorCategoria) {
-		return ResponseEntity.ok(repository.findByFrescorCategoriaContainingIgnoreCase(frescorCategoria));
+		return ResponseEntity.ok(repository.findByFrescorCategoria(frescorCategoria));
 	}
 	
 	@PostMapping
