@@ -17,14 +17,15 @@ public class Categoria {
 
 	//Opções: Frutas,Verduras,Legumes;
 	@NotNull
-	private String classe_categoria;
+	//@Column(name="classe_categoria") - Para modificar o nome no banco de dados
+	private String classeCategoria;
 	
 	//Opções: Familiar,Agroecológica,Orgânica,Sintrópica;
 	@NotNull
-	private String modprod_categoria;
+	private String modprodCategoria;
 	
 	@NotNull
-	private boolean frescor_categoria;
+	private boolean frescorCategoria;
 
 	public Long getId() {
 		return id;
@@ -34,27 +35,28 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public boolean isFrescor_categoria() {
-		return frescor_categoria;
+	public String getClasseCategoria() {
+		return classeCategoria;
 	}
 
-	public void setFrescor_categoria(boolean frescor_categoria) {
-		this.frescor_categoria = frescor_categoria;
+	public void setClasseCategoria(String classeCategoria) {
+		this.classeCategoria = classeCategoria;
 	}
 
-	public String getClasse_categoria() {
-		return classe_categoria;
+	public String getModprodCategoria() {
+		return modprodCategoria;
 	}
 
-	public void setClasse_categoria(String classe_categoria) {
-		this.classe_categoria = classe_categoria;
+	public void setModprodCategoria(String modprodCategoria) {
+		this.modprodCategoria = modprodCategoria;
 	}
 
-	public String getModprod_categoria() {
-		return modprod_categoria;
+	public boolean isFrescorCategoria() {
+		return frescorCategoria;
 	}
 
-	public void setModprod_categoria(String modprod_categoria) {
-		this.modprod_categoria = modprod_categoria;
+	public void setFrescorCategoria(boolean frescorCategoria) {
+		this.frescorCategoria = frescorCategoria;
 	}
+
 }
