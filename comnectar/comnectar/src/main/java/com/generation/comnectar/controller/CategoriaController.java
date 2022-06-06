@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.generation.blogpessoal.model.Tema;
 import com.generation.comnectar.model.Categoria;
 import com.generation.comnectar.repository.CategoriaRepository;
 
