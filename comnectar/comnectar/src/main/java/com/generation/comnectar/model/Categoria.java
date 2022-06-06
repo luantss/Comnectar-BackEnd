@@ -22,7 +22,7 @@ public class Categoria {
 	
 	//Opções: Familiar,Agroecológica,Orgânica,Sintrópica;
 	@NotNull
-	private String modprodCategoria;
+	private String modProdCategoria;
 	
 	@NotNull
 	private boolean frescorCategoria;
@@ -43,12 +43,12 @@ public class Categoria {
 		this.classeCategoria = classeCategoria;
 	}
 
-	public String getModprodCategoria() {
-		return modprodCategoria;
+	public String getModProdCategoria() {
+		return modProdCategoria;
 	}
 
-	public void setModprodCategoria(String modprodCategoria) {
-		this.modprodCategoria = modprodCategoria;
+	public void setModProdCategoria(String modprodCategoria) {
+		this.modProdCategoria = modprodCategoria;
 	}
 
 	public boolean isFrescorCategoria() {

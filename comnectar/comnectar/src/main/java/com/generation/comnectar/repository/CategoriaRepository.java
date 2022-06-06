@@ -9,7 +9,7 @@ import com.generation.comnectar.model.Categoria;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
-		public List<Categoria> findAllByClasseContainingIgnoreCase (String classe);
+		public List<Categoria> findAllByClasseCategoriaContainingIgnoreCase (String classeCategoria);
 		public List<Categoria> findByModProdCategoriaContainingIgnoreCase (String modProdCategoria);
 		public List<Categoria> findByFrescorCategoriaContainingIgnoreCase (boolean frescorCategoria);
 
