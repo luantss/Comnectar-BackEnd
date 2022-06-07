@@ -23,6 +23,7 @@ import com.generation.comnectar.repository.CategoriaRepository;
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/categorias")
+
 public class CategoriaController {
 
 	@Autowired
