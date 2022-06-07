@@ -12,6 +12,6 @@ import com.generation.comnectar.model.Produto;
 public interface ProdutoRepository extends JpaRepository<Produto,Long>{
 	
 	public List<Produto> findByNomeProdutoContainingIgnoreCase(String nomeProduto);
-	public List<Produto> findByPrecoProdutoLessThan(BigDecimal precoProduto);
-	public List<Produto> findByPrecoProdutoGreaterThan(BigDecimal precoProduto);
+	public List<Produto> findByPrecoProdutoLessThanEqual(BigDecimal precoProduto);
+	public List<Produto> findByPrecoProdutoGreaterThanEqual(BigDecimal precoProduto);
 }
