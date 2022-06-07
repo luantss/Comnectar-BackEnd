@@ -60,10 +60,19 @@ public class ProdutoController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
 	}
 	
-	@PutMapping ("/{id}")
-	public ResponseEntity<Produto> atualizaProduto(@Valid @RequestBody Produto produto, @PathVariable Long id){
-		return ResponseEntity.ok(produtoRepository.save(produto));
-	}
+	@PutMapping("/{id}")
+    public ResponseEntity<Produto> atualizaProduto (@RequestBody Produto produto, @PathVariable Long id ){
+        return produtoRepository.findById(id).map(prod->{
+        prod.setNomeProduto(produto.getNomeProduto());
+        prod.setFotoProduto(produto.getFotoProduto());
+        prod.setPrecoProduto(produto.getPrecoProduto());
+        prod.setUnidadeProduto(produto.getUnidadeProduto());
+        prod.setEstoqueProduto(produto.getEstoqueProduto());
+        prod.setChegadaProduto(produto.getChegadaProduto());
+        prod.setShelfProduto(produto.getShelfProduto());
+        return ResponseEntity.status(HttpStatus.OK).body(produtoRepository.save(prod));
+        }).orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
 	
 	@DeleteMapping ("/{id}")
 	public void deleteProduto (@PathVariable Long id) {
