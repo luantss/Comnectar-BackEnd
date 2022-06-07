@@ -60,8 +60,8 @@ public class ProdutoController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
 	}
 	
-	@PutMapping
-	public ResponseEntity<Produto> atualizaProduto(@Valid @RequestBody Produto produto){
+	@PutMapping ("/{id}")
+	public ResponseEntity<Produto> atualizaProduto(@Valid @RequestBody Produto produto, @PathVariable Long id){
 		return ResponseEntity.ok(produtoRepository.save(produto));
 	}
 	
