@@ -28,7 +28,7 @@ public class Usuario {
 	private String loginUsuario;
 	
 	@NotNull
-	@Size(min = 8, max = 20)
+	@Size(min = 8, max = 64)
 	private String senhaUsuario;
 	
 	@NotNull

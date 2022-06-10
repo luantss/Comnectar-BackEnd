@@ -58,7 +58,7 @@ public class UsuarioService {
 		if (usuario.isPresent()) {
 			if (compararSenhas(usuarioLogin.get().getSenha(), usuario.get().getSenhaUsuario())) {
 
-				usuarioLogin.get().setNome(usuario.get().getNomeUsuario());
+				usuarioLogin.get().setUsuario(usuario.get().getLoginUsuario());
 				usuarioLogin.get().setSenha(usuario.get().getSenhaUsuario());
 				usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getUsuario(), usuarioLogin.get().getSenha()));
 
