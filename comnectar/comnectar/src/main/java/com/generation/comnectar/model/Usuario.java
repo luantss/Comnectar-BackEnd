@@ -47,8 +47,8 @@ public class Usuario {
 
 	
 	
-	public Usuario(Long id, @NotNull @NotBlank String nomeUsuario, @NotNull @NotBlank @Email String loginUsuario,
-			@NotNull @NotBlank @Size(min = 8, max = 64) String senhaUsuario, @NotNull String localUsuario, String fotoUsuario,
+	public Usuario(Long id,String nomeUsuario,String loginUsuario,
+		String senhaUsuario, String localUsuario, String fotoUsuario,
 			List<Produto> produtos) {
 		this.id = id;
 		this.nomeUsuario = nomeUsuario;

@@ -57,6 +57,31 @@ public class Produto {
 	@JsonIgnoreProperties("produtos")
 	private Usuario usuario;
 
+	
+
+	public Produto() {
+	}
+
+	
+
+	public Produto(Long id,String nomeProduto,String fotoProduto,
+		String infoProduto,
+		BigDecimal precoProduto,String unidadeProduto,
+		BigDecimal estoqueProduto,  String chegadaProduto,
+	String shelfProduto, Categoria categoria, Usuario usuario) {
+		this.id = id;
+		this.nomeProduto = nomeProduto;
+		this.fotoProduto = fotoProduto;
+		this.infoProduto = infoProduto;
+		this.precoProduto = precoProduto;
+		this.unidadeProduto = unidadeProduto;
+		this.estoqueProduto = estoqueProduto;
+		this.chegadaProduto = chegadaProduto;
+		this.shelfProduto = shelfProduto;
+		this.categoria = categoria;
+		this.usuario = usuario;
+	}
+
 	public Long getId() {
 		return id;
 	}

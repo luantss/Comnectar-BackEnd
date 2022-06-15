@@ -1,5 +1,7 @@
 package com.generation.comnectar.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,6 +35,23 @@ public class Categoria {
 	
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
+	private List<Produto> produtos;
+
+	
+
+	public Categoria() {
+	}
+
+	
+	public Categoria(Long id, String classeCategoria, String modProdCategoria,
+		boolean frescorCategoria, List<Produto> produtos) {
+		this.id = id;
+		this.classeCategoria = classeCategoria;
+		this.modProdCategoria = modProdCategoria;
+		this.frescorCategoria = frescorCategoria;
+		this.produtos = produtos;
+	}
+
 
 	public Long getId() {
 		return id;
