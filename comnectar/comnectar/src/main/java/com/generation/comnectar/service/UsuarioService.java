@@ -23,7 +23,8 @@ public class UsuarioService {
 	public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
 
 		if (usuarioRepository.findByLoginUsuario(usuario.getLoginUsuario()).isPresent())
-			return Optional.empty();
+
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuário já existe!", null);
 
 		usuario.setSenhaUsuario(criptografarSenha(usuario.getSenhaUsuario()));
 
@@ -53,14 +54,18 @@ public class UsuarioService {
 
 	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) {
 
-		Optional<Usuario> usuario = usuarioRepository.findByLoginUsuario(usuarioLogin.get().getUsuario());
+		Optional<Usuario> usuario = usuarioRepository.findByLoginUsuario(usuarioLogin.get().getLoginUsuario());
 
 		if (usuario.isPresent()) {
-			if (compararSenhas(usuarioLogin.get().getSenha(), usuario.get().getSenhaUsuario())) {
+			if (compararSenhas(usuarioLogin.get().getSenhaUsuario(), usuario.get().getSenhaUsuario())) {
 
-				usuarioLogin.get().setUsuario(usuario.get().getLoginUsuario());
-				usuarioLogin.get().setSenha(usuario.get().getSenhaUsuario());
-				usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getUsuario(), usuarioLogin.get().getSenha()));
+				usuarioLogin.get().setId(usuario.get().getId());
+				usuarioLogin.get().setNomeUsuario(usuario.get().getNomeUsuario());
+				usuarioLogin.get().setLoginUsuario(usuario.get().getLoginUsuario());
+				usuarioLogin.get().setLocalUsuario(usuario.get().getLocalUsuario());
+				usuarioLogin.get().setSenhaUsuario(usuario.get().getSenhaUsuario());
+				usuarioLogin.get().setFoto(usuario.get().getFotoUsuario());
+				usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getLoginUsuario(), usuarioLogin.get().getSenhaUsuario()));
 
 				return usuarioLogin;
 

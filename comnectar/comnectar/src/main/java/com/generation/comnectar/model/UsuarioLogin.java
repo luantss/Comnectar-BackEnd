@@ -1,37 +1,81 @@
 package com.generation.comnectar.model;
 
 public class UsuarioLogin {
+
+	private Long id;
 	
-	private String nome;
+	private String nomeUsuario;
 	
-	private String usuario;
+	private String loginUsuario;
 	
-	private String senha;
+	private String senhaUsuario;
+
+	private String localUsuario;
+
+	private String foto;
 	
 	private String token;
 
-	public String getNome() {
-		return nome;
+	public UsuarioLogin(Long id, String nomeUsuario, String loginUsuario, String senhaUsuario, String localUsuario,
+			String foto, String token) {
+		this.id = id;
+		this.nomeUsuario = nomeUsuario;
+		this.loginUsuario = loginUsuario;
+		this.senhaUsuario = senhaUsuario;
+		this.localUsuario = localUsuario;
+		this.foto = foto;
+		this.token = token;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public UsuarioLogin() {
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public Long getId() {
+		return id;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getFoto() {
+		return foto;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getLocalUsuario() {
+		return localUsuario;
+	}
+
+	public void setLocalUsuario(String localUsuario) {
+		this.localUsuario = localUsuario;
+	}
+
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
+
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
+	}
+
+	public String getLoginUsuario() {
+		return loginUsuario;
+	}
+
+	public void setLoginUsuario(String loginUsuario) {
+		this.loginUsuario = loginUsuario;
+	}
+
+	public String getSenhaUsuario() {
+		return senhaUsuario;
+	}
+
+	public void setSenhaUsuario(String senhaUsuario) {
+		this.senhaUsuario = senhaUsuario;
 	}
 
 	public String getToken() {
@@ -41,4 +85,6 @@ public class UsuarioLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
+
+	
 }
