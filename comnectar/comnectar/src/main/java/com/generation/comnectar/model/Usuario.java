@@ -43,7 +43,25 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produtos;
+
+
 	
+	
+	public Usuario(Long id, @NotNull @NotBlank String nomeUsuario, @NotNull @NotBlank @Email String loginUsuario,
+			@NotNull @NotBlank @Size(min = 8, max = 64) String senhaUsuario, @NotNull String localUsuario, String fotoUsuario,
+			List<Produto> produtos) {
+		this.id = id;
+		this.nomeUsuario = nomeUsuario;
+		this.loginUsuario = loginUsuario;
+		this.senhaUsuario = senhaUsuario;
+		this.localUsuario = localUsuario;
+		this.fotoUsuario = fotoUsuario;
+		this.produtos = produtos;
+	}
+
+	public Usuario() {
+	}
+
 	public Long getId() {
 		return id;
 	}
