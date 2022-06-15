@@ -23,7 +23,8 @@ public class UsuarioService {
 	public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
 
 		if (usuarioRepository.findByLoginUsuario(usuario.getLoginUsuario()).isPresent())
-			return Optional.empty();
+
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuário já existe!", null);
 
 		usuario.setSenhaUsuario(criptografarSenha(usuario.getSenhaUsuario()));
 
