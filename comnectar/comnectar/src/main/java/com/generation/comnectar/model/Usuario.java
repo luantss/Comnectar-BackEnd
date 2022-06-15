@@ -12,6 +12,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity
 @Table(name="tb_usuario")
@@ -23,12 +24,13 @@ public class Usuario {
 	@NotNull
 	private String nomeUsuario;
 	
-	@NotNull
-	@Email
+	@Schema(example = "email@email.com.br")
+	@NotNull(message = "O campo Usuário é obrigatório!")
+	@Email(message = "O campo Usuário deve ser um e-mail válido!")
 	private String loginUsuario;
 	
 	@NotNull
-	@Size(min = 8, max = 64)
+	@Size(min = 8,max = 64)
 	private String senhaUsuario;
 	
 	@NotNull
@@ -36,7 +38,7 @@ public class Usuario {
 	
 	private String fotoUsuario;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produtos;
 	
@@ -86,6 +88,5 @@ public class Usuario {
 
 	public void setFotoUsuario(String fotoUsuario) {
 		this.fotoUsuario = fotoUsuario;
-	}
-	
+	}	
 }

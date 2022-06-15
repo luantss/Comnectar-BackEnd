@@ -57,7 +57,7 @@ public class Produto {
 	@JsonIgnoreProperties("produtos")
 	private Usuario usuario;
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
