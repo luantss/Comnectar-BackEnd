@@ -40,6 +40,18 @@ public class Usuario {
 	
 	private String fotoUsuario;
 
+	public Usuario(Long id, String nomeUsuario, String loginUsuario,
+			String senhaUsuario, String localUsuario,
+			String fotoUsuario) {
+		this.id = id;
+		this.nomeUsuario = nomeUsuario;
+		this.loginUsuario = loginUsuario;
+		this.senhaUsuario = senhaUsuario;
+		this.localUsuario = localUsuario;
+		this.fotoUsuario = fotoUsuario;
+	}
+
+
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produtos;

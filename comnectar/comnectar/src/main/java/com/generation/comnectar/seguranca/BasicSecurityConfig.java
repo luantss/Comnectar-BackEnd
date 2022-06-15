@@ -28,7 +28,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		.authorities("ROLE_USER");
 
 	}
-	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

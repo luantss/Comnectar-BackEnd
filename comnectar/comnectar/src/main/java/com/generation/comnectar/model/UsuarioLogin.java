@@ -16,7 +16,19 @@ public class UsuarioLogin {
 	
 	private String token;
 
-	
+	public UsuarioLogin(Long id, String nomeUsuario, String loginUsuario, String senhaUsuario, String localUsuario,
+			String foto, String token) {
+		this.id = id;
+		this.nomeUsuario = nomeUsuario;
+		this.loginUsuario = loginUsuario;
+		this.senhaUsuario = senhaUsuario;
+		this.localUsuario = localUsuario;
+		this.foto = foto;
+		this.token = token;
+	}
+
+	public UsuarioLogin() {
+	}
 
 	public Long getId() {
 		return id;
