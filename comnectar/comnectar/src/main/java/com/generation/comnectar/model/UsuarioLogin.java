@@ -1,14 +1,46 @@
 package com.generation.comnectar.model;
 
 public class UsuarioLogin {
+
+	private Long id;
 	
 	private String nomeUsuario;
 	
 	private String loginUsuario;
 	
 	private String senhaUsuario;
+
+	private String localUsuario;
+
+	private String foto;
 	
 	private String token;
+
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getLocalUsuario() {
+		return localUsuario;
+	}
+
+	public void setLocalUsuario(String localUsuario) {
+		this.localUsuario = localUsuario;
+	}
 
 	public String getNomeUsuario() {
 		return nomeUsuario;
